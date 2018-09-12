@@ -1,0 +1,148 @@
+<dashboard isVisible="False">
+  <label>Telegraf OS metrics</label>
+  <row>
+    <panel>
+      <viz type="SA-ITSI-CustomModuleViz.entity_info_header">
+          <option name="link.visible">false</option>
+          <option name="refresh.time.visible">false</option>
+        <search>
+          <query>| savedsearch DA-ITSI-TELEGRAF-OS-Inventory_Search host="$host$"</query>
+          <earliest>-48h</earliest>
+          <latest>now</latest>
+        </search>
+      </viz>
+
+      <viz type="SA-ITSI-CustomModuleViz.mini_chart">
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.id">os-cpu-usage</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.title">CPU utilization (%)</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">summary</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
+        <search>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_CPU_Search host="$host$"</query>
+            <earliest>$earliest$</earliest>
+            <latest>$latest$</latest>
+        </search>
+      </viz>
+
+      <viz type="SA-ITSI-CustomModuleViz.mini_chart">
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.id">os-mem-usage</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.title">Memory utilization (%)</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">summary</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
+        <search>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Memory_Search host="$host$"</query>
+            <earliest>$earliest$</earliest>
+            <latest>$latest$</latest>
+        </search>
+      </viz>
+
+      <viz type="SA-ITSI-CustomModuleViz.mini_chart">
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.id">os-disk-usage</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.title">Total Storage Used (%)</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">used_space</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
+        <search>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Disk_Usage_Search host="$host$"</query>
+            <earliest>$earliest$</earliest>
+            <latest>$latest$</latest>
+        </search>
+      </viz>
+
+    </panel>
+  </row>
+
+  <row id="tabs">
+    <panel id="tabs_panel">
+      <viz type="SA-ITSI-CustomModuleViz.tab_viz">
+          <option name="link.visible">false</option>
+          <option name="refresh.time.visible">false</option>
+        <search>
+          <query>|noop | stats count</query>
+        </search>
+      </viz>
+    </panel>
+  </row>
+
+  <row depends="$control_overview$">
+    <panel ref="overview_cpu" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_uptime" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_memory" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_overview$">
+    <panel ref="overview_filesystem" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_network" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_diskio" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_cpu$">
+    <panel ref="cpu_categories" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="cpu_by_core" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="cpu_proccount" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_cpu$">
+    <panel ref="cpu_procstat" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_processes$">
+    <panel ref="processes_blocked" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_dead" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_idle" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_paging" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_processes$">
+    <panel ref="processes_running" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_sleeping" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_stopped" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_total" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_processes$">
+    <panel ref="processes_total_threads" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_unknown" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="processes_zombies" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_memory$">
+    <panel ref="memory_volume" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="memory_swap" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="memory_swap_inout" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_memory$">
+    <panel ref="memory_procstat" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_diskio$">
+    <panel ref="diskio_io_time" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_iops_in_progress" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_weighted_io_time" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_diskio$">
+    <panel ref="diskio_read_bytes" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_read_time" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_reads" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_diskio$">
+    <panel ref="diskio_write_bytes" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_write_time" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_writes" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_disk$">
+    <panel ref="storage_used_percent" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_uptime$">
+    <panel ref="uptime" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_forecast$">
+    <panel ref="forecast_storage" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+</dashboard>
