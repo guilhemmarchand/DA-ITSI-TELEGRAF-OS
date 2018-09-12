@@ -3,14 +3,13 @@
     <title>writes (nb)</title>
     <search>
       <query>
- | mstats latest(_value) as value where `telegraf_index` metric_name=diskio.writes host=$host$ name=* by metric_name, name span=1s
+| mstats latest(_value) as value where `telegraf_index` metric_name=diskio.writes host=$host$ name=* by metric_name, name span=1s
 | eval {metric_name}=value
 | stats first(diskio.*) as "*_counter" by _time, name
 | streamstats current=f last(*_counter) as "*_prev" by name
 | eval writes=(writes_counter-writes_prev)
 | fields _time, name, writes
 | where NOT (writes&lt;0)
-| bucket _time span=1m | stats avg(*) as "*" by _time, name
 | timechart useother=f limit=45 `telegraf_span` avg(writes) as writes by name
       </query>
       <earliest>$earliest$</earliest>

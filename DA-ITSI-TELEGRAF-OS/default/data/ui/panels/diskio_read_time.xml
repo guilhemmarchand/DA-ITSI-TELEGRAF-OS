@@ -3,14 +3,13 @@
     <title>read_time (milliseconds)</title>
     <search>
       <query>
- | mstats latest(_value) as value where `telegraf_index` metric_name=diskio.read_time host=$host$ name=* by metric_name, name span=1s
+| mstats latest(_value) as value where `telegraf_index` metric_name=diskio.read_time host=$host$ name=* by metric_name, name span=1s
 | eval {metric_name}=value
 | stats first(diskio.*) as "*_counter" by _time, name
 | streamstats current=f last(*_counter) as "*_prev" by name
 | eval read_time=(read_time_counter-read_time_prev)
 | fields _time, name, read_time
 | where NOT (read_time&lt;0)
-| bucket _time span=1m | stats avg(*) as "*" by _time, name
 | timechart useother=f limit=45 `telegraf_span` avg(read_time) as read_time by name
       </query>
       <earliest>$earliest$</earliest>

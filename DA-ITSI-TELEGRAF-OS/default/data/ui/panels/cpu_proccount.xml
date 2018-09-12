@@ -3,7 +3,7 @@
     <title>Number of running processes</title>
     <search>
       <query>
-| mstats avg(_value) as value where `telegraf_index` metric_name=processes.total host=$host$ span=1m
+| mstats avg(_value) as value where `telegraf_index` metric_name=processes.total host=$host$ span=1s
 | timechart `telegraf_span` avg(value) as running_processes
       </query>
       <earliest>$earliest$</earliest>

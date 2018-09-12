@@ -10,7 +10,6 @@
 | eval iops_in_progress=((iops_in_progress_counter-iops_in_progress_prev))
 | fields _time, name, iops_in_progress
 | where NOT (iops_in_progress&lt;0)
-| bucket _time span=1m | stats avg(*) as "*" by _time, name
 | timechart useother=f limit=45 `telegraf_span` avg(iops_in_progress) as iops_in_progress by name
       </query>
       <earliest>$earliest$</earliest>

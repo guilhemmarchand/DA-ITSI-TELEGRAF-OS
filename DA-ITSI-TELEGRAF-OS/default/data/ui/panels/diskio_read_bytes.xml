@@ -10,7 +10,6 @@
 | eval read_bytes=((read_bytes_counter-read_bytes_prev)/10000000)
 | fields _time, name, read_bytes
 | where NOT (read_bytes&lt;0)
-| bucket _time span=1m | stats avg(*) as "*" by _time, name
 | timechart useother=f limit=45 `telegraf_span` avg(read_bytes) as read_bytes by name
       </query>
       <earliest>$earliest$</earliest>

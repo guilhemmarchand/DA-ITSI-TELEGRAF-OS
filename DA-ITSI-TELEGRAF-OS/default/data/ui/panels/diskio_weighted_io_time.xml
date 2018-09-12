@@ -10,7 +10,6 @@
 | eval weighted_io_time=((weighted_io_time_counter-weighted_io_time_prev))
 | fields _time, name, weighted_io_time
 | where NOT (weighted_io_time&lt;0)
-| bucket _time span=1m | stats avg(*) as "*" by _time, name
 | timechart useother=f limit=45 `telegraf_span` avg(weighted_io_time) as weighted_io_time by name
       </query>
       <earliest>$earliest$</earliest>
