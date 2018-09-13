@@ -150,6 +150,11 @@
     <panel ref="net_drop_out" app="DA-ITSI-TELEGRAF-OS"></panel>
   </row>
 
+  <row depends="$control_netconnection$">
+    <panel ref="netconnection_sockets" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="netconnection_sockets_creation" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
   <row depends="$control_disk$">
     <panel ref="storage_used_percent" app="DA-ITSI-TELEGRAF-OS"></panel>
   </row>

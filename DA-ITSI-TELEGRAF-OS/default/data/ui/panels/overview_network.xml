@@ -35,7 +35,7 @@
     <option name="charting.chart.stackMode">default</option>
     <option name="charting.chart.style">shiny</option>
     <option name="charting.drilldown">all</option>
-    <option name="charting.fieldColors">{Inbound: 0xBDBD5E, Outbound: 0x5F7396}</option>
+    <option name="charting.fieldColors">{"inbound": 0xBDBD5E, "outbound": 0x5F7396}</option>
     <option name="charting.layout.splitSeries">0</option>
     <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
     <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
