@@ -1,7 +1,7 @@
 
 <panel>
     <search id="GlobalSearch">
-        <query>| mstats latest(_value) as uptime where `telegraf_index` metric_name=system.uptime host=GMD-LAPTOP
+        <query>| mstats latest(_value) as uptime where `telegraf_index` metric_name=system.uptime host=$host$
 | eval now=now()
 | sort host
 | eval "Date of last system startup (mm/dd/Y HH:MM)"=strftime((now()-uptime), "%m/%d/%Y %H:%M")

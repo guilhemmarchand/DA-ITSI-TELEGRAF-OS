@@ -133,6 +133,23 @@
     <panel ref="diskio_writes" app="DA-ITSI-TELEGRAF-OS"></panel>
   </row>
 
+  <row depends="$control_net$">
+    <panel ref="net_inbound" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_packets_recv" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_net$">
+    <panel ref="net_outbound" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_packets_send" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_net$">
+    <panel ref="net_err_in" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_err_out" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_drop_in" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_drop_out" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
   <row depends="$control_disk$">
     <panel ref="storage_used_percent" app="DA-ITSI-TELEGRAF-OS"></panel>
   </row>

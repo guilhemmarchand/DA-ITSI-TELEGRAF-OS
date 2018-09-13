@@ -7,7 +7,7 @@
 | eval {metric_name}=value
 | stats first(mem.*) as "mem.*" by _time
 | foreach mem.* [ eval &lt;&lt;FIELD&gt;&gt; = '&lt;&lt;FIELD&gt;&gt;'/1073741824 ]
-| timechart `telegraf_span` avg(mem.*) AS "*"
+| timechart `telegraf_span` avg(mem.*) AS "*" | where isnotnull(total)
       </query>
       <earliest>$earliest$</earliest>
       <latest>$latest$</latest>
