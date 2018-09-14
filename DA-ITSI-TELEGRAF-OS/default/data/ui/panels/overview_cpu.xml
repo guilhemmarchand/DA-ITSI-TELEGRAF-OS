@@ -6,7 +6,7 @@
 | eval {metric_name}=value
 | stats first(cpu.*) as "cpu.*" by _time
 | eval cpu.usage=('cpu.usage_iowait'+'cpu.usage_system'+'cpu.usage_user')
-| timechart `telegraf_span` avg(cpu.usage) AS "avg cpu load %"
+| timechart `telegraf_span` max(cpu.usage) AS "max cpu load %", avg(cpu.usage) AS "avg cpu load %"
       </query>
       <earliest>$earliest$</earliest>
       <latest>$latest$</latest>
@@ -14,6 +14,7 @@
     <option name="charting.chart">line</option>
    <!--  <option name="charting.axisLabelsX.majorLabelVisibility">hide</option> -->
     <option name="charting.axisTitleX.visibility">collapsed</option>
+    <option name="charting.axisY.maximumNumber">100</option>
     <option name="charting.axisTitleY.visibility">collapsed</option>
     <option name="charting.chart.nullValueMode">gaps</option>
     <option name="charting.chart.showDataLabels">none</option>
