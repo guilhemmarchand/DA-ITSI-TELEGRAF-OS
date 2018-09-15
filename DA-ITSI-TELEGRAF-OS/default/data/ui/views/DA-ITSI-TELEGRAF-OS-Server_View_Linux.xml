@@ -6,7 +6,7 @@
           <option name="link.visible">false</option>
           <option name="refresh.time.visible">false</option>
         <search>
-          <query>| savedsearch DA-ITSI-TELEGRAF-OS-Host_Search host="$host$"</query>
+          <query>| savedsearch DA-ITSI-TELEGRAF-OS-Host_Search_linux host="$host$"</query>
           <earliest>-48h</earliest>
           <latest>now</latest>
         </search>
@@ -18,7 +18,7 @@
         <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">summary</option>
         <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
         <search>
-            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_CPU_Search host="$host$"</query>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_CPU_Search_linux host="$host$"</query>
             <earliest>$earliest$</earliest>
             <latest>$latest$</latest>
         </search>
@@ -30,7 +30,7 @@
         <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">summary</option>
         <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
         <search>
-            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Memory_Search host="$host$"</query>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Memory_Search_linux host="$host$"</query>
             <earliest>$earliest$</earliest>
             <latest>$latest$</latest>
         </search>
@@ -42,7 +42,7 @@
         <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">used_space</option>
         <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
         <search>
-            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Disk_Usage_Search host="$host$"</query>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Disk_Usage_Search_linux host="$host$"</query>
             <earliest>$earliest$</earliest>
             <latest>$latest$</latest>
         </search>
