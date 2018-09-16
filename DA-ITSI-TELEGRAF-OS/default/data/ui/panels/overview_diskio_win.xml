@@ -2,7 +2,7 @@
   <chart>
     <title>Disk MB/s</title>
     <search>
-      <query>| mstats latest(_value) as value where `telegraf_index` metric_name=win_diskio.Disk_Write_Bytes_persec OR metric_name=win_diskio.Disk_Read_Bytes_persec host=$host$ by metric_name span=1s
+      <query>| mstats avg(_value) as value where `telegraf_index` metric_name=win_diskio.Disk_Write_Bytes_persec OR metric_name=win_diskio.Disk_Read_Bytes_persec host=$host$ by metric_name span=1s
 | eval {metric_name}=value
 | stats first(win_diskio.*) as "*" by _time
 | eval Disk_Write_Bytes_persec=(Disk_Write_Bytes_persec/10000000), Disk_Read_Bytes_persec=(Disk_Read_Bytes_persec/10000000)

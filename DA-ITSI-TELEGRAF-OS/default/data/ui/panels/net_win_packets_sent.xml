@@ -3,7 +3,7 @@
     <title>Inbound packets</title>
     <search>
       <query>
-| mstats avg(_value) as value where `telegraf_index` metric_name=win_net.Packets_Received_persec host=$host$ by instance span=1s
+| mstats avg(_value) as value where `telegraf_index` metric_name=win_net.Packets_Sent_persec host=$host$ by instance span=1s
 | timechart useother=f limit=45 `telegraf_span` sum(value) as packets_recv by instance
       </query>
       <earliest>$earliest$</earliest>

@@ -51,7 +51,7 @@
     </single>
     <chart>
         <search>
-            <query>| mstats latest(_value) as uptime where `telegraf_index` metric_name=win_system.System_Up_Time host=$host$ span=1s
+            <query>| mstats latest(_value) as uptime where `telegraf_index` metric_name=win_system.System_Up_Time host=$host$ span=1m
 | eval uptime=(uptime/86400)
 | timechart `telegraf_span` latest(uptime) as uptime</query>
             <earliest>-1y@d</earliest>
