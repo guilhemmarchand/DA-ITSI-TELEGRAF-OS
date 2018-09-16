@@ -1,0 +1,125 @@
+<dashboard isVisible="False">
+  <label>Telegraf OS metrics</label>
+  <row>
+    <panel>
+      <viz type="SA-ITSI-CustomModuleViz.entity_info_header">
+          <option name="link.visible">false</option>
+          <option name="refresh.time.visible">false</option>
+        <search>
+          <query>| savedsearch DA-ITSI-TELEGRAF-OS-Host_Search_windows host="$host$"</query>
+          <earliest>-48h</earliest>
+          <latest>now</latest>
+        </search>
+      </viz>
+
+      <viz type="SA-ITSI-CustomModuleViz.mini_chart">
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.id">os-cpu-usage</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.title">CPU utilization (%)</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">summary</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
+        <search>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_CPU_Search_windows host="$host$"</query>
+            <earliest>$earliest$</earliest>
+            <latest>$latest$</latest>
+        </search>
+      </viz>
+
+      <viz type="SA-ITSI-CustomModuleViz.mini_chart">
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.id">os-mem-usage</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.title">Memory utilization (%)</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">summary</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
+        <search>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Memory_Search_windows host="$host$"</query>
+            <earliest>$earliest$</earliest>
+            <latest>$latest$</latest>
+        </search>
+      </viz>
+
+      <viz type="SA-ITSI-CustomModuleViz.mini_chart">
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.id">os-disk-usage</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.title">Total Storage Used (%)</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.subtitleField">used_space</option>
+        <option name="SA-ITSI-CustomModuleViz.mini_chart.chartType">solidgauge</option>
+        <search>
+            <query>| savedsearch DA-ITSI-TELEGRAF-OS-Context_Chart_Disk_Usage_Search_windows host="$host$"</query>
+            <earliest>$earliest$</earliest>
+            <latest>$latest$</latest>
+        </search>
+      </viz>
+
+    </panel>
+  </row>
+
+  <row id="tabs">
+    <panel id="tabs_panel">
+      <viz type="SA-ITSI-CustomModuleViz.tab_viz">
+          <option name="link.visible">false</option>
+          <option name="refresh.time.visible">false</option>
+        <search>
+          <query>|noop | stats count</query>
+        </search>
+      </viz>
+    </panel>
+  </row>
+
+  <row depends="$control_overview$">
+    <panel ref="overview_win_cpu" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_win_mem"  app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_diskio_win"  app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_overview$">
+    <panel ref="overview_filesystem_win" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_network_win" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="overview_win_system" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_cpu$">
+    <panel ref="cpu_win_user" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="cpu_win_processor" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="cpu_win_privileged" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_cpu$">
+    <panel ref="cpu_win_interrupt" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="cpu_win_idle" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="cpu_win_dpc" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_memory$">
+    <panel ref="memory_win_volume" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="memory_win_paging" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_memory$">
+    <panel ref="memory_win_pagespersec" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="memory_win_pagesfaultpersec" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_net$">
+    <panel ref="net_win_inbound" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_win_packets_recv" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_net$">
+    <panel ref="net_win_outbound" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_win_packets_sent" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_net$">
+    <panel ref="net_win_err_in" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_win_err_out" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_win_drop_in" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="net_win_drop_out" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_disk$">
+    <panel ref="storage_used_percent_win" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_uptime$">
+    <panel ref="uptime_win" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+</dashboard>
