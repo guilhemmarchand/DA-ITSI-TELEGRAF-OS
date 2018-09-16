@@ -97,6 +97,22 @@
     <panel ref="memory_win_pagesfaultpersec" app="DA-ITSI-TELEGRAF-OS"></panel>
   </row>
 
+  <row depends="$control_diskio$">
+    <panel ref="diskio_io_win_queue" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_io_win_read" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_io_win_write" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_diskio$">
+    <panel ref="diskio_io_win_read_bytes" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_io_win_write_bytes" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_diskio$">
+    <panel ref="diskio_io_win_read_time" app="DA-ITSI-TELEGRAF-OS"></panel>
+    <panel ref="diskio_io_win_write_time" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
   <row depends="$control_net$">
     <panel ref="net_win_inbound" app="DA-ITSI-TELEGRAF-OS"></panel>
     <panel ref="net_win_packets_recv" app="DA-ITSI-TELEGRAF-OS"></panel>
@@ -120,6 +136,10 @@
 
   <row depends="$control_uptime$">
     <panel ref="uptime_win" app="DA-ITSI-TELEGRAF-OS"></panel>
+  </row>
+
+  <row depends="$control_forecast$">
+    <panel ref="forecast_win_storage" app="DA-ITSI-TELEGRAF-OS"></panel>
   </row>
 
 </dashboard>
