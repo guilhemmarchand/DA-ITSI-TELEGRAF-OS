@@ -6,12 +6,49 @@
 Welcome to DA-ITSI-TELEGRAF-OS's documentation!
 ===============================================
 
-Contents:
+ITSI module for Telegraf metrics for Operating Systems.
+
+.. image:: img/screen001.png
+   :alt: screen001.png
+   :align: center
+
+.. image:: img/main_linux.png
+   :alt: main_windows.png
+   :align: center
+
+.. image:: img/main_windows.png
+   :alt: main_windows.png
+   :align: center
+
+Overview:
+---------
 
 .. toctree::
    :maxdepth: 2
 
+   about
+   releasenotes
+   knownissues
+   support
 
+Deployment and configuration:
+-----------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   deployment
+   telegraf
+   service_creation
+   upgrade
+
+Troubleshoot:
+-------------
+
+.. toctree::
+   :maxdepth: 2
+
+   troubleshoot
 
 Indices and tables
 ==================
