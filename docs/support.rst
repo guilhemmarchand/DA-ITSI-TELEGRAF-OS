@@ -1,3 +1,34 @@
 Support
 #######
 
+The ITSI module for Telegraf OS is community supported.
+
+To get support, use of the following possibilities:
+
+Splunk Answers
+==============
+
+Open a question in Splunk answers for the application:
+
+- URL to come.
+
+Splunk community slack
+======================
+
+Contact me on Splunk community slack, or even better, ask the community !
+
+Open a issue in Git
+===================
+
+To report an issue, request a feature change or improvement, please open an issue in Github:
+
+https://github.com/guilhemmarchand/DA-ITSI-TELEGRAF-OS/issues
+
+Email support
+=============
+
+Last but not least, you contact me by email:
+
+* guilhem.marchand@gmail.com
+
+However, previous options are far betters, and will give you all the chances to get a quick support from the community of fellow Splunkers.

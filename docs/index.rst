@@ -21,18 +21,18 @@ ITSI module for Telegraf metrics for Operating Systems.
    :align: center
 
 Overview:
----------
+=========
 
 .. toctree::
    :maxdepth: 2
 
    about
-   releasenotes
+   compatibility
    knownissues
    support
 
 Deployment and configuration:
------------------------------
+=============================
 
 .. toctree::
    :maxdepth: 2
@@ -40,20 +40,19 @@ Deployment and configuration:
    deployment
    telegraf
    service_creation
-   upgrade
 
 Troubleshoot:
--------------
+=============
 
 .. toctree::
    :maxdepth: 2
 
    troubleshoot
 
-Indices and tables
-==================
+Versioniong and build history:
+==============================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+   :maxdepth: 1
 
+   releasenotes
