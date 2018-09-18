@@ -14,11 +14,11 @@ limitations under the License.
 
 # ITSI Module for Influxdata Telegraf Operating System metrics
 
-## This application is also officially available on Splunk Base:
+#### This application is also officially available on Splunk Base:
 
 https://splunkbase.splunk.com/app/<ID>
 
-## The documentation for Nmon Performance Monitor is available online at:
+#### The documentation for Nmon Performance Monitor is available online at:
 
 https://da-itsi-telegraf-os.readthedocs.io/en/latest
 
