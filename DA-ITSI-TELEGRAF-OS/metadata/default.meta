@@ -16,3 +16,8 @@ access = read : [ * ], write : [ admin, itoa_admin ]
 
 [itsi_service_template]
 access = read : [ * ], write : [ admin, itoa_admin ]
+
+### Visualizations
+
+[visualizations/telegraf_horseshoe_meter]
+export = system
