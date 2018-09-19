@@ -22,6 +22,7 @@ Technology Addon for Telegraf metrics
 **The Technology Addon for Telegraf metrics can be downloaded from:**
 
 *notes: The TA is only required for indexing time parsing if you index data in Graphite output format with Splunk TCP inputs or Kafka*
+
 *Starting version 1.8 of Telegraf, data can be sent directly to Splunk HTTP Event Collector from Telegraf hosts*
 
 Splunk base
