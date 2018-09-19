@@ -3,14 +3,14 @@ Support
 
 The ITSI module for Telegraf OS is community supported.
 
-To get support, use of the following possibilities:
+To get support, use of one the following options:
 
 Splunk Answers
 ==============
 
 Open a question in Splunk answers for the application:
 
-- URL to come.
+- https://answers.splunk.com/app/questions/4194.html
 
 Splunk community slack
 ======================
