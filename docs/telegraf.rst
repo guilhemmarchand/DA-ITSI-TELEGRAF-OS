@@ -157,7 +157,7 @@ You need to activate the memory inputs. (which on Windows uses WMI collection)::
     # no configuration
 
 Linux processes monitoring (procstat)
-=====================================
+-------------------------------------
 
 In the linux views, the processes usage (both CPU and Memory) rely on the procstat inputs, which requires additional configuration depending on your context.
 
