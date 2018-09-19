@@ -30,6 +30,7 @@ Overview:
    compatibility
    knownissues
    support
+   download
 
 Deployment and configuration:
 =============================
