@@ -1,4 +1,4 @@
 Known Issues
 ############
 
-There are no none issues at the moment.
+There are no known issues at the moment.
