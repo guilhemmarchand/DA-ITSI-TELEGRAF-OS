@@ -2,7 +2,7 @@ Download
 ========
 
 ITSI Module for Telegraf OS
-===========================
+###########################
 
 **The ITSI Module for Telegraf OS can be downloaded from:**
 
@@ -17,7 +17,7 @@ GitHub
 - https://github.com/guilhemmarchand/DA-ITSI-TELEGRAF-OS
 
 Technology Addon for Telegraf metrics
--------------------------------------
+#####################################
 
 **The Technology Addon for Telegraf metrics can be downloaded from:**
 
