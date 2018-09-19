@@ -319,7 +319,7 @@
                     <query>| mstats latest(_value) as value where index="telegraf" metric_name=disk.used OR metric_name=disk.total OR metric_name=disk.used_percent `devices_exclusions` host=$host$ by metric_name, path
 | eval {metric_name}=value
 | stats first(disk.*) as "disk.*" by path
-| eval "disk.used"=round(((('disk.used' / 1024) / 1024) / 1024),2), used_pct=round('disk.used_percent',2)
+| eval "disk.total"=round(((('disk.total' / 1024) / 1024) / 1024),2), used_pct=round('disk.used_percent',2)
 | rename disk.total as "disk total (GB)"
 | fields path, "disk total (GB)", used_pct
 | sort 0 device</query>
