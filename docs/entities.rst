@@ -11,11 +11,11 @@ Entities automatic import
 * DA-ITSI-TELEGRAF-OS-Inventory_Search_linux
 * DA-ITSI-TELEGRAF-OS-Inventory_Search_windows
 
-**When entities are discovered, these will be added automatically with the informational field:**
+**When entities are discovered, entities will be added automatically with the following informational field:**
 
 * itsi_role=telegraf_host
 
-This main information, in addition with the family of the Operating System, is used to automatically provide the relevant entity health page view in ITSI.
+This main information, in addition with the family of the Operating System, are used to automatically provide the relevant entity health page view in ITSI.
 
 Manual entities import
 ######################
@@ -24,7 +24,7 @@ Manual entities import
 
 *Configure / Entities / New Entity / Import from Search*
 
-Then select the module name, and depending on your needs the relevant search.
+Then select the module name, and depending on your needs select the relevant search.
 
 **Linux hosts discovery:**
 
