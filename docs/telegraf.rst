@@ -146,6 +146,32 @@ The output configuration depends on the deployment you choose to use to ingest m
 
 
 
+Windows additional configuration
+--------------------------------
+
+For Windows memory management, the default win_mem inputs does not retrieve some of the metrics we need.
+
+You need to activate the memory inputs. (which on Windows uses WMI collection)::
+
+    [[inputs.mem]]
+    # no configuration
+
+Linux processes monitoring (procstat)
+=====================================
+
+In the linux views, the processes usage (both CPU and Memory) rely on the procstat inputs, which requires additional configuration depending on your context.
+
+As for an example, the following configuration monitors all the processes owned by the "splunk" unix user::
+
+    [[inputs.procstat]]
+    #   ## PID file to monitor process
+    #   pid_file = "/var/run/nginx.pid"
+    #   ## executable name (ie, pgrep <exe>)
+    #   # exe = "nginx"
+    #   ## pattern as argument for pgrep (ie, pgrep -f <pattern>)
+    #   # pattern = "nginx"
+    #   ## user as argument for pgrep (ie, pgrep -u <user>)
+        user = "splunk"
 
 HTTP Events Collector (HEC)
 ===========================
@@ -215,6 +241,10 @@ TCP / TCP-SSL Inputs
 
 **Splunk deployment with TCP inputs.**
 
+**This deployment requires additional indexing time parsing configuration:**
+
+- https://github.com/guilhemmarchand/TA-influxdata-telegraf
+
 The deployment is very simple and can be described as:
 
 *Telegraf agents --> TCP or TCP over SSL --> Splunk TCP inputs*
@@ -268,6 +298,10 @@ KAFKA Ingestion
 ===============
 
 **Splunk deployment with Kafka.**
+
+**This deployment requires additional indexing time parsing configuration:**
+
+- https://github.com/guilhemmarchand/TA-influxdata-telegraf
 
 If you are using Kafka, or consider using it, producing Telegraf metrics to Kafka makes a lot of sense.
 

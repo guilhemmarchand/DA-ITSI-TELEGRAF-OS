@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to DA-ITSI-TELEGRAF-OS's documentation!
-===============================================
+Welcome to the ITSI module for Telegraf OS documentation!
+=========================================================
 
 ITSI module for Telegraf metrics for Operating Systems.
 
@@ -39,7 +39,9 @@ Deployment and configuration:
 
    deployment
    telegraf
+   entities
    service_creation
+   health_view
 
 Troubleshoot:
 =============
