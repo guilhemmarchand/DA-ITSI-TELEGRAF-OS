@@ -294,6 +294,51 @@ Push this configuration to your Telegraf agents, et voila.
 
     | mcatalog values(_dims) as dimensions values(metric_name) as metric_name where index=telegraf metric_name=*
 
+SPLUNK file monitoring Ingestion
+================================
+
+**Splunk deployment with Splunk file monitoring.**
+
+**This deployment requires additional indexing time parsing configuration:**
+
+- https://github.com/guilhemmarchand/TA-influxdata-telegraf
+
+Telegraf has a "file" output plugin that allows writing metrics to a local file on the file-system, don't say more that is much more than enough
+to Splunk it.
+
+**The Telegraf configuration is really simple and relies on defining your ouput:**
+
+Example::
+
+    [[outputs.file]]
+      ## Files to write to, "stdout" is a specially handled file.
+      files = ["/tmp/metrics.out"]
+
+      ## Data format to output.
+      ## Each data format has its own unique set of configuration options, read
+      ## more about them here:
+      ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_OUTPUT.md
+      data_format = "graphite"
+      graphite_tag_support = true
+
+Notes: this is a simplistic example, in real condition do not forget to manage the file rotation using a simple logrorate configuration for Linux, and relevant solution for other OS.
+
+**Splunk file input configuration:**
+
+I cannot say more, this is simple, very simple. Add the following configuration to any inputs.conf configuration file of your choice:
+
+Example::
+
+    [monitor::/tmp/metrics.out]
+    disabled = false
+    index = telegraf
+    sourcetype = file:telegraf:graphite
+
+Apply this simple input.conf, if you deploy thought the Splunk deployment server ensure splunkd is configured to restart in your serverclass configuration.
+
+Et voila, Splunk ingests the metrics continously and metrics are forwarded to the indexing layer using your Splunk infrastructure, be on-premise, private or Splunk Cloud.
+
+
 KAFKA Ingestion
 ===============
 
