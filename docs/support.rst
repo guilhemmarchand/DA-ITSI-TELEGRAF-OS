@@ -17,7 +17,7 @@ Splunk community slack
 
 Contact me on Splunk community slack, or even better, ask the community !
 
-- splunk-usergroups.slack.com
+- https://splunk-usergroups.slack.com
 
 Open a issue in Git
 ===================
