@@ -14,7 +14,7 @@ The ITSI module has been tested and qualified against reasonably fresh versions 
 OS metrics collection compatibility
 ###################################
 
-Telegraf supports various operating systems and process architecture including any version of Linux and Windows.
+Telegraf supports various operating systems and process architectures including any version of Linux and Windows.
 
 For more information:
 
