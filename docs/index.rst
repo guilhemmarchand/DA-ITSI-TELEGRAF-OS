@@ -6,7 +6,9 @@
 Welcome to the ITSI module for Telegraf OS documentation!
 =========================================================
 
-Telegraf is the famous and powerful plugin-driven server agent for collecting and reporting metrics by Influxdata
+Telegraf is the famous and powerful plugin-driven server agent for collecting and reporting metrics by Influxdata.
+
+The ITSI module for Telegraf OS brings the Telegraf power to ITSI and provides builtin entities discovery, services templates and KPI base searches, and rich entity health views.
 
 .. image:: img/screen001.png
    :alt: screen001.png
