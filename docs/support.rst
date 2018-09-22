@@ -27,8 +27,6 @@ https://github.com/guilhemmarchand/DA-ITSI-TELEGRAF-OS/issues
 Email support
 =============
 
-Last but not least, you contact me by email:
-
 * guilhem.marchand@gmail.com
 
 However, previous options are far betters, and will give you all the chances to get a quick support from the community of fellow Splunkers.
