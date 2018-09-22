@@ -17,14 +17,14 @@ Splunk community slack
 
 Contact me on Splunk community slack, or even better, ask the community !
 
-* splunk-usergroups.slack.com
+- splunk-usergroups.slack.com
 
 Open a issue in Git
 ===================
 
 To report an issue, request a feature change or improvement, please open an issue in Github:
 
-https://github.com/guilhemmarchand/DA-ITSI-TELEGRAF-OS/issues
+- https://github.com/guilhemmarchand/DA-ITSI-TELEGRAF-OS/issues
 
 Email support
 =============
