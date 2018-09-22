@@ -9,7 +9,7 @@ Especially because the ITSI module relies on, and leverages the Splunk metric st
 ITSI compatibility
 ##################
 
-The ITSI module has been tested and qualified against reasonably fresh versions of ITSI, recommended version is 3.1.0 and higher, but previous versions may work as well although it has and will not be tested.
+The ITSI module has been tested and qualified against reasonably fresh versions of ITSI, recommended version is 3.1.0 and higher, previous versions may work as well although it has not and will not be tested.
 
 OS metrics collection compatibility
 ###################################
