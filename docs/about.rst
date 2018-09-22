@@ -11,4 +11,10 @@ About
 
 https://github.com/influxdata/telegraf
 
-This ITSI module provides builtin entities discovery, services templates and KPI base searches, and rich entity health views to manage Operating System metrics ingested in the Splunk metric store.
+Telegraf is the famous and powerful plugin-driven server agent for collecting and reporting metrics by Influxdata
+
+The ITSI module leverages Telegraf for Splunk and provides:
+
+- Builtin entities discovery
+- Services templates and KPI base searches
+- Rich entity health views to manage Operating System metrics ingested in the Splunk metric store
