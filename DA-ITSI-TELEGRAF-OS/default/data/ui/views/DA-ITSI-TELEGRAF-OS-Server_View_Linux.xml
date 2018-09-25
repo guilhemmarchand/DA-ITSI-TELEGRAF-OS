@@ -1,5 +1,10 @@
-<dashboard stylesheet="DA-ITSI-TELEGRAF-OS:common.css,DA-ITSI-TELEGRAF-OS:table_bar.css" script="DA-ITSI-TELEGRAF-OS:table_bar.js" isVisible="False">
-    <label>Telegraf OS metrics</label>
+<dashboard stylesheet="DA-ITSI-TELEGRAF-OS:common.css,DA-ITSI-TELEGRAF-OS:table_bar.css" script="DA-ITSI-TELEGRAF-OS:table_bar.js" hideEdit="true" isVisible="False">
+    <label>Telegraf OS metrics - Linux</label>
+    <fieldset autoRun="false" submitButton="false">
+        <input type="time" searchWhenChanged="true">
+            <label></label>
+        </input>
+    </fieldset>
     <row>
         <panel>
             <table>
