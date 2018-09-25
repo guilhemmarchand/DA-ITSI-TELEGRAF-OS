@@ -5,8 +5,8 @@ Implementing Telegraf and sending its metrics in Splunk is simple, and efficient
 
 It is not the purpose of this documentation to expose every piece of the installation and configuration of Telegraf or Splunk.
 
-Telegraf installation
-=====================
+Telegraf installation and configuration
+=======================================
 
 Telegraf installation, configuration and start
 ----------------------------------------------
@@ -146,8 +146,8 @@ The output configuration depends on the deployment you choose to use to ingest m
 
 
 
-Windows additional configuration
---------------------------------
+Windows additional configuration (mem inputs)
+---------------------------------------------
 
 For Windows memory management, the default win_mem inputs does not retrieve some of the metrics we need.
 
@@ -155,6 +155,38 @@ You need to activate the memory inputs. (which on Windows uses WMI collection)::
 
     [[inputs.mem]]
     # no configuration
+
+Windows Active Directory Domain Controller
+------------------------------------------
+
+**Follow instructions for "Active Directory Domain Controller":**
+
+- https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#active-directory-domain-controller
+
+Windows DNS server
+------------------
+
+**Follow instructions for "DNS Server + Domain Controllers":**
+
+- https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#dns-server--domain-controllers
+
+Windows DFS server
+------------------
+
+**For DFS Namespace, follow instructions for "DFS Namespace + Domain Controllers":**
+
+- https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#dfs-namespace--domain-controllers
+
+**For DFS Replication, follow instructions for "DFS Replication + Domain Controllers":**
+
+- https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#dfs-replication--domain-controllers
+
+Microsoft IIS / ASP.NET
+------------------
+
+**For IIS and ASP.NET, follow instructions for: IIS / ASP.NET**
+
+- https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#iis--aspnet
 
 Linux processes monitoring (procstat)
 -------------------------------------
