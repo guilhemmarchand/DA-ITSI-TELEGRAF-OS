@@ -16,7 +16,7 @@ limitations under the License.
 
 #### This application is also officially available on Splunk Base:
 
-https://splunkbase.splunk.com/app/<ID>
+https://splunkbase.splunk.com/app/4194
 
 #### The documentation for Nmon Performance Monitor is available online at:
 
