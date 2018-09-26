@@ -321,7 +321,7 @@
             <table id="tablebar">
                 <title>file-systems usage</title>
                 <search depends="$chart1$">
-                    <query>| mstats latest(_value) as value where index="telegraf" metric_name=disk.used OR metric_name=disk.total OR metric_name=disk.used_percent `devices_exclusions` host=$host$ by metric_name, path
+                    <query>| mstats latest(_value) as value where `telegraf_index` metric_name=disk.used OR metric_name=disk.total OR metric_name=disk.used_percent `devices_exclusions` host=$host$ by metric_name, path
 | eval {metric_name}=value
 | stats first(disk.*) as "disk.*" by path
 | eval "disk.total"=round(((('disk.total' / 1024) / 1024) / 1024),2), used_pct=round('disk.used_percent',2)
@@ -1554,7 +1554,7 @@
                 <title>Storage usage (GB) prediction for next 3 months</title>
                 <search depends="$chart10$">
                     <query>
-| mstats latest(_value) as value where index="telegraf" metric_name=disk.used OR metric_name=disk.total `devices_exclusions` host=$host$ by metric_name, path span=1d
+| mstats latest(_value) as value where `telegraf_index` metric_name=disk.used OR metric_name=disk.total `devices_exclusions` host=$host$ by metric_name, path span=1d
 | eval {metric_name}=value
 | stats first(disk.used) as disk.used, first(disk.total) as disk.total by _time, path
 | stats sum(disk.used) as used, sum(disk.total) as total by _time
