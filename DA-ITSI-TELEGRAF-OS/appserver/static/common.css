@@ -8,6 +8,15 @@
   display: inline !important;
 }
 
+/* reduce size of the token input panel */
+.input-link label{
+  display: none !important;
+}
+
+.splunk-choice-input-message{
+  display: none !important;
+}
+
 /* Increase the default max-width for links */
 .btn-pill {
   max-width: 600px !important;

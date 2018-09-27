@@ -1,8 +1,14 @@
 Release notes
 #############
 
+Version 1.0.4
+=============
+
+- fix: add machine name in entity summary display
+- fix: reduce input token panel size in views
+
 Version 1.0.3
-=============    
+=============
 
 - fix: missing by clause statement in diskio KPI basesearch for Linux generates wrong results
 - fix: fixed remaining explicit calls to telegraf index instead of index macro
