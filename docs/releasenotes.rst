@@ -1,6 +1,11 @@
 Release notes
 #############
 
+Version 1.0.5
+=============
+
+- fix: bad selected metrics in Windows DNS view
+
 Version 1.0.4
 =============
 

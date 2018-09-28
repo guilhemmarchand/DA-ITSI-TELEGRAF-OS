@@ -99,9 +99,9 @@ UDP_Response_Sent=(UDP_Response_Sent_counter-UDP_Response_Sent_prev)
     </panel>
     <panel>
       <chart>
-        <title>TCP_Query_Received</title>
+        <title>TCP_Response_Sent</title>
         <search base="global">
-          <query>fields _time, TCP_Query_Received</query>
+          <query>fields _time, TCP_Response_Sent</query>
         </search>
         <option name="charting.chart">line</option>
         <!--  <option name="charting.axisLabelsX.majorLabelVisibility">hide</option> -->
