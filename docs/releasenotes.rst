@@ -7,6 +7,7 @@ Version 1.0.6
 - fix: Hard coded index name references (should be referring to the global macro)
 - fix: Improved nix family detection, avoid relying on kernel metrics which is Linux specific and might mot be available if not configured
 - fix: Missing host filter for network panel in Windows OS entity view
+- fix: Prevents entities dup creation at installation time if data is available, switching to cron based schedule of modular inputs instead of seconds based
 
 Version 1.0.5
 =============
