@@ -364,7 +364,7 @@
                 <title>Network inbound/outbound traffic (KBps)</title>
                 <search depends="$chart1$">
                     <query>
-| mstats avg(_value) as value where `telegraf_index` metric_name=win_net.Bytes_Received_persec OR metric_name=win_net.Bytes_Sent_persec host=* by metric_name span=1s
+| mstats avg(_value) as value where `telegraf_index` metric_name=win_net.Bytes_Received_persec OR metric_name=win_net.Bytes_Sent_persec host=$host$ by metric_name span=1s
 | eval {metric_name}=value
 | stats first(win_net.*) as "*" by _time
 | rename Bytes_Received_persec as inbound, Bytes_Sent_persec as outbound

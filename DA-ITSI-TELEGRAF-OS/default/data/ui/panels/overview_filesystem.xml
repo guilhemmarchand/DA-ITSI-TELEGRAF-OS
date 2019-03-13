@@ -2,7 +2,7 @@
     <table>
         <title>file-systems usage</title>
         <search>
-            <query>| mstats latest(_value) as value where index="telegraf" metric_name=disk.used OR metric_name=disk.total OR metric_name=disk.used_percent `devices_exclusions` host=$host$ by metric_name, path
+            <query>| mstats latest(_value) as value where `telegraf_index` metric_name=disk.used OR metric_name=disk.total OR metric_name=disk.used_percent `devices_exclusions` host=$host$ by metric_name, path
 | eval {metric_name}=value
 | stats first(disk.*) as "disk.*" by path
 | eval "disk.total"=round(((('disk.total' / 1024) / 1024) / 1024),2), "disk.used"=round(((('disk.used' / 1024) / 1024) / 1024),2), "disk.used_percent"=round('disk.used_percent',2)
